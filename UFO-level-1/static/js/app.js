@@ -18,7 +18,16 @@ button.on("click",function(event){
     tbody.html("");
     var filterDate = d3.select("#datetime");
     var filterValue = filterDate.property("value");
-    console.log(filterValue);
+    // console.log(filterValue);
     var filterData = tableData.filter(tableData => tableData.datetime === filterValue);
-    console.log(filterData);
+    // console.log(filterData);
+    filterData.forEach(function(ufoDate){
+        // console.log(ufoDate);
+        var row = tbody.append("tr");
+        Object.entries(ufoDate).forEach(function([key,value]){
+            // console.log(key,value);
+            var cell = row.append("td");
+            cell.text(value);
+        });
+    });
 });
