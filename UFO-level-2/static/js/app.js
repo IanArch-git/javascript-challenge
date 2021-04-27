@@ -23,7 +23,22 @@ button.on("click",function(event){
     var filterCountry = d3.select("#country").property("value");
     var filterShape = d3.select("#shape").property("value");
     // console.log(filterValue);
-    var filterData = tableData.filter(tableData => tableData.datetime === filterValue);
+    var filterData = tableData;
+    if (filterValue){
+        filterData = filterData.filter(row => row.datetime === filterValue);
+    }
+    if (filterCity){
+        filterData = filterData.filter(row => row.city === filterCity);
+    }
+    if (filterState){
+        filterData = filterData.filter(row => row.state === filterState);
+    }
+    if (filterCountry){
+        filterData = filterData.filter(row => row.country === filterCountry);
+    }
+    if (filterShape){
+        filterData = filterData.filter(row => row.shape === filterShape);
+    }
     // console.log(filterData);
     filterData.forEach(function(ufoDate){
         // console.log(ufoDate);
