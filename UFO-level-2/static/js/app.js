@@ -18,6 +18,10 @@ button.on("click",function(event){
     tbody.html("");
     var filterDate = d3.select("#datetime");
     var filterValue = filterDate.property("value");
+    var filterCity = d3.select("#city").property("value");
+    var filterState = d3.select("#state").property("value");
+    var filterCountry = d3.select("#country").property("value");
+    var filterShape = d3.select("#shape").property("value");
     // console.log(filterValue);
     var filterData = tableData.filter(tableData => tableData.datetime === filterValue);
     // console.log(filterData);
